@@ -221,8 +221,8 @@ public class PlayerEditorManager implements Listener{
 	void onRightClickTool(PlayerInteractEvent e){
 		if( !(e.getAction() == Action.LEFT_CLICK_AIR
 				|| e.getAction() == Action.RIGHT_CLICK_AIR
-				|| e.getAction() == Action.LEFT_CLICK_BLOCK
-				|| e.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
+				|| e.getAction() == Action.LEFT_CLICK_BLOCK)) return;
+		if (e.getAction() == Action.RIGHT_CLICK_BLOCK) return;
 		Player player = e.getPlayer();
 		if(player.getInventory().getItemInMainHand() == null)  return;
 		if(!plugin.isEditTool(player.getInventory().getItemInMainHand())) return;
